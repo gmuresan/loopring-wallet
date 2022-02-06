@@ -1,5 +1,5 @@
 # Demo
-Recording of demo: https://www.loom.com/share/37d594b3f7d54444bdb8843740c17046
+Recording of demo: https://www.loom.com/share/91c065090ddd4e9a91c014d881e1c888
 
 # Constants
 1. Update NFT_CONTRACT_ADDRESS in src/constants.ts with any valid ERC-721 contract address
@@ -16,6 +16,8 @@ Recording of demo: https://www.loom.com/share/37d594b3f7d54444bdb8843740c17046
 6. Add unit tests
 7. Responsive styling
 8. Add routing for additional views/features
+9. Redux store uses token index to hide each token, instead of token ID. Need to refactor to allow for hiding by token ID.
+10. Allow multiple contracts
 
 # Getting Started with Create React App
 

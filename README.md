@@ -1,3 +1,6 @@
+# Demo
+Recording of demo: https://www.loom.com/share/37d594b3f7d54444bdb8843740c17046
+
 # Constants
 1. Update NFT_CONTRACT_ADDRESS in src/constants.ts with any valid ERC-721 contract address
 

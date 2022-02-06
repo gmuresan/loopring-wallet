@@ -9,23 +9,26 @@ const FlexLayout = styled.div`
   align-items: flex-start;
 `
 
-const HeaderLayout = styled.div`
+const HeaderLayout = styled.header`
   height: 80px;
   width: 100%;
   background: grey;
   display: flex;
+  justify-content: flex-end;
+  padding: 5px;
 `
 
 const BodyLayout = styled.div`
   flex-grow: 1;
+  display: flex;
+  padding: 30px;
+  justify-content: center;
 `
 
-const Layout = () => {
+const Layout: React.FC = () => {
   return <FlexLayout>
     <HeaderLayout>
-      <header className="App-header">
-        <Navbar />
-      </header>
+      <Navbar />
     </HeaderLayout>
     <BodyLayout>
       <Body />

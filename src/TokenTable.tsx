@@ -1,26 +1,17 @@
-import {useEthers, useContractCall} from '@usedapp/core'
-import ERC721Interface from './eth/erc721Interface'
+import {useEthers} from '@usedapp/core'
 import Table from './components/Table'
 import TokenRow from './TokenRow'
+import useEthCall from './hooks/useEthCall'
 
 
-const CONTRACT = '0xdea46615e69c1acbf7f0260ffead9853557cb9fb'
-
-
-
-const TokenTable = () => {
+const TokenTable: React.FC = () => {
   const {account} = useEthers()
-  const res = useContractCall({
-    abi: ERC721Interface,
-    address: CONTRACT,
-    method: 'balanceOf',
-    args: [account]
-  })
+  const res = useEthCall('balanceOf', [account])
 
   let rows: any[] = []
   if(res && account) {
     const res0 = res[0]
-    const numTokens = parseInt(res0._hex)
+    const numTokens: number = parseInt(res0._hex)
     for(let i=0; i<numTokens; i++) {
       rows.push(
         <tr key={i}>
@@ -29,6 +20,15 @@ const TokenTable = () => {
       )
     }
   }
+
+  if(!rows.length) {
+    return (
+      <div>
+        Please connect wallet first
+      </div>
+    )
+  }
+
   return (
     <Table headerNames={['Token ID', 'IPFS Metadata Hash']}>
       {rows}

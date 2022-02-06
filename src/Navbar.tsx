@@ -1,27 +1,16 @@
-import { useEffect, useState } from "react";
-import Address from './components/Address'
+import { useEthers } from '@usedapp/core'
 import Connect from './components/Connect'
 
+const Navbar: React.FC = () => {
+  const { account }: {account?: string|null|undefined} = useEthers()
 
-function checkIfWalletIsConnected() {}
-
-
-export default function Navbar() {
-  const [userAddress, setUserAddress] = useState("");
-
-  useEffect(() => {
-    checkIfWalletIsConnected();
-  }, []);
-
-  useEffect(() => {
-    //onAddressChanged();
-  }, [userAddress]);
-
-  return userAddress ? (
+  return account ? (
     <div>
-      Connected with <Address />
+      Connected with {account}
     </div>
   ) : (
      <Connect />
   );
 }
+
+export default Navbar

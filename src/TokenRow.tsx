@@ -1,19 +1,13 @@
-import {useContractCall} from '@usedapp/core'
-import ERC721Interface from './eth/erc721Interface'
 import TokenMetadata from './TokenMetadata'
-
-const CONTRACT = '0xdea46615e69c1acbf7f0260ffead9853557cb9fb'
+import useEthCall from './hooks/useEthCall'
 
 const TokenRow = ({account, tokenIndex}: {account:string, tokenIndex: number}) => {
 
-  const res = useContractCall({
-    abi: ERC721Interface,
-    address: CONTRACT,
-    method: 'tokenOfOwnerByIndex',
-    args: [account, tokenIndex]
-  })
+
+  const res = useEthCall('tokenOfOwnerByIndex', [account, tokenIndex])
+
   if(res) {
-    const tokenId = parseInt(res[0]._hex)
+    const tokenId: number = parseInt(res[0]._hex)
     return (
       <>
         <td>

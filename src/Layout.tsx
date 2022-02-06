@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 import Navbar from './Navbar'
+import Body from './Body'
 
 const FlexLayout = styled.div`
   display: flex;
@@ -27,7 +28,7 @@ const Layout = () => {
       </header>
     </HeaderLayout>
     <BodyLayout>
-      Body
+      <Body />
     </BodyLayout>
   </FlexLayout>
 }

@@ -1,3 +1,7 @@
+# Constants
+1. Update NFT_CONTRACT_ADDRESS in src/constants.ts with any valid ERC-721 contract address
+
+
 # Next steps
 1. Improve table render performance
   1. Use useMemo to optimize unnecessary rerenders
@@ -8,6 +12,7 @@
 5. Check for wallet connection on initial render
 6. Add unit tests
 7. Responsive styling
+8. Add routing for additional views/features
 
 # Getting Started with Create React App
 

@@ -15,12 +15,7 @@ const NetworkConnection = ({ chainId, account }: {chainId: number|undefined, acc
     return <div>Please connect wallet</div>
   }
 
-  if(chainId === 4) {
-    return <div>Connected to Rinkeby</div>
-  }
-
-  return <div>Switch network to Rinkeby</div>
-
+  return null
 }
 
 const Connect = () => {
